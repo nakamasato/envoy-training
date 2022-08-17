@@ -1,2 +1,3 @@
 version: v1
-name: buf.build/nakamasato/grpc-json
+deps:
+  - buf.build/googleapis/googleapis
