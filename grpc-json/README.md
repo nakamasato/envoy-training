@@ -16,6 +16,15 @@
 1. buf
 1. envoy
 
+## Run
+
+```
+go run maing.go
+```
+
+```
+envoy -c envoy.yaml
+```
 
 ## 1. Preparation: HelloWorld gRPC
 
