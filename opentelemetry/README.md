@@ -83,6 +83,25 @@
 
 1. `service-2`: Simple flask app (same as service-1)
 
+## Configuration
+
+```yaml
+          tracing:
+            provider:
+              name: envoy.tracers.opentelemetry
+              typed_config:
+                "@type": type.googleapis.com/envoy.config.trace.v3.OpenTelemetryConfig
+                grpc_service:
+                  envoy_grpc:
+                    cluster_name: opentelemetry_collector
+                  timeout: 0.250s
+                service_name: front-envoy
+```
+
+1. `grpc_service`: (config.core.v3.GrpcService) The upstream gRPC cluster that will receive OTLP traces.
+1. `service_name`: (string) The name for the service. This will be populated in the ResourceSpan Resource attributes.
+
+https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/trace/v3/opentelemetry.proto.html
 
 ## Steps
 
