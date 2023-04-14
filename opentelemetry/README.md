@@ -12,7 +12,7 @@
 1. `envoy-front-proxy-1`: # This proxy listens on port 10000, and routes the following paths:
     1. /trace/1 -> routes to `envoy-1` on port 10000
     1. /trace/2 -> routes to `envoy-1` on port 10001 (for onward routing to `envoy-2`)
-1. `opentelemetry`: opentelemetry collector with [otel-collector-config.yaml](../envoy/examples/opentelemetry/otel-collector-config.yaml): we can access the collected traces on http://localhost:55679/debug/tracez
+1. `opentelemetry`: opentelemetry collector with [otel-collector-config.yaml](https://github.com/envoyproxy/envoy/blob/afa41e7c40e839d89c8956ef845ee151eae70953/examples/opentelemetry/otel-collector-config.yaml): we can access the collected traces on http://localhost:55679/debug/tracez
     <details><summary>otel-collector-config.yaml</summary>
 
     ```yaml
@@ -96,7 +96,7 @@
     docker-compose -f envoy/examples/opentelemetry/docker-compose.yaml up
     ```
 
-    This will start the 6 containers listed above. You can see all the configuration files under [opentelemetry](../envoy/examples/opentelemetry)
+    This will start the 6 containers listed above. You can see all the configuration files under [opentelemetry](https://github.com/envoyproxy/envoy/blob/afa41e7c40e839d89c8956ef845ee151eae70953/examples/opentelemetry)
 
 1. Send requests
 
